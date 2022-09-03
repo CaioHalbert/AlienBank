@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'CustomAuth' # adiciona a APP nova nas instalações
 ]
+
+AUTH_USER_MODEL = 'CustomAuth.CustomUser' # Adiciona o modelo customizado como parametro de authenticação
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,19 @@
+<!-- 
+    Pagina responsavel por trazer a home para a tela
+-->
+
+{% extends "base.html" %}<!-- Chama a pagina BASE como template da pagina -->
+
+{% block title %}Home{% endblock %} <!-- Cria um bloco do tipo TITULO para nomear a pagina -->
+
+{% block content %} <!-- Cria um bloco do tipo CONTEÚDO para preencher o corpo na pagina(dentro do body ou main) -->
+
+{% if user.is_authenticated %} <!-- Cria um intervalo de renderização baseado em uma logica if/else -->
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a> |
+  <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+{% endblock %}

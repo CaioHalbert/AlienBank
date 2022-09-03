@@ -1,0 +1,17 @@
+<!--
+    Pagina html responsavel pelo login
+    utiliza um form mo metodo POST para validar as informações
+-->
+
+{% extends "base.html" %} <!-- Chama a pagina BASE como template da pagina -->
+
+{% block title %}Log In{% endblock %} <!-- Cria um bloco do tipo TITULO para nomear a pagina -->
+
+{% block content %} <!-- Cria um bloco do tipo CONTEÚDO para preencher o corpo na pagina(dentro do body ou main) -->
+<h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+{% endblock %}

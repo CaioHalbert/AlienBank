@@ -1,0 +1,17 @@
+<!--
+    Pagina html responsavel por registrar o usuário
+    Utiliza um metodo POST para registrar as informações
+-->
+
+{% extends "base.html" %} <!-- Chama a pagina BASE como template da pagina -->
+
+{% block title %}Sign Up{% endblock %} <!-- Cria um bloco do tipo TITULO para nomear a pagina -->
+
+{% block content %} <!-- Cria um bloco do tipo CONTEÚDO para preencher o corpo na pagina(dentro do body ou main) -->
+<h2>Sign Up</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Sign Up</button>
+</form>
+{% endblock %}

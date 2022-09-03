@@ -14,8 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic.base import TemplateView
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+urlpatterns = [ #Adiciona as urls que serão usadas na aplicação
+
+    path("", TemplateView.as_view(template_name="home.html"), name="home"), # Chama diretamente a pagina home, independente de logica criada para index
+
+    path('admin/', admin.site.urls), # Inclui app admin no projeto como acessivel
+
+    path("accounts/", include("CustomAuth.urls")), # Inclui um camino para as urls da app CustomAuth
+
+    path("accounts/", include("django.contrib.auth.urls")), # Inclui as validações da app auth
+
 ]
