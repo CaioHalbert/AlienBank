@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'CustomAuth.CustomUser' # Adiciona o modelo customizado como parametro de authenticação
 
+STATIC_URL = '/static/'  #Definimos a pasta static como um diretorio estatico
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

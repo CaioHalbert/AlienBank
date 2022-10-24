@@ -11,9 +11,37 @@
 {% if user.is_authenticated %} <!-- Cria um intervalo de renderização baseado em uma logica if/else -->
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+
+
+
+
+
+
+
+
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
+  <div style="display:flex; justify-content: center; align-items: center; padding-top:10%;">
+    <div class="card text-center" 
+      style=" width: 18rem;  
+              background: #BAD6F2; 
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+              backdrop-filter: blur(2px); 
+              border-radius: 35px;">
+
+      <img src="static/img/LOGO-CAIO.png" class="card-img-top" alt="..." >
+      <div class="card-body">
+        <h5 class="card-title" style="font-family: 'Fredoka'; letter-spacing: 0.55em; font-size: 24px;">ALIENBANK</h5><br>
+        <h5 class="card-subtitle">Parece que você não esta logado</h5><br>
+        <p class="card-text">Clique em uma das opções para se conectar ou cadastrar-se</p><br>
+      </div>
+    
+      <div class="card-body">
+        <a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
 {% endif %}
 {% endblock %}

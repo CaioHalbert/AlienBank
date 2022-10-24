@@ -25,6 +25,8 @@ urlpatterns = [ #Adiciona as urls que serão usadas na aplicação
 
     path("accounts/", include("CustomAuth.urls")), # Inclui um camino para as urls da app CustomAuth
 
+    path("transactions/", include("transaction.urls")),
+
     path("accounts/", include("django.contrib.auth.urls")), # Inclui as validações da app auth
 
 ]
